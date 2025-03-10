@@ -1,4 +1,5 @@
 const results = document.querySelector(".results");
+const $countryExplain = document.querySelector(".country-explain")
 
 function createLi(name, content) {
   const li = document.createElement("li");
@@ -57,3 +58,9 @@ fetch("https://restcountries.com/v3.1/all")
   .catch(function (err) {
     console.log("une erreur est survenue", err);
   });
+
+  results.addEventListener("click", function(e) {
+    console.log("click")
+    $countryExplain.classList.remove("hidden")
+    countryCard.classList.add("hidden")
+  })
